@@ -4,9 +4,22 @@ import React from "react";
 
 import { companies, testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
+import { AuroraBackground } from "./ui/AuroraBackground";
+import { motion } from "framer-motion";
 
 const Clients = () => {
   return (
+        <AuroraBackground>
+ <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
     <section id="testimonials" className="py-20">
       <h1 className="heading">
         Kind words from
@@ -46,6 +59,9 @@ const Clients = () => {
         </div>
       </div>
     </section>
+        </motion.div>
+    </AuroraBackground>
+    
   );
 };
 
